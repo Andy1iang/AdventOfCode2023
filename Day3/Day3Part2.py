@@ -1,4 +1,4 @@
-f = open('Day3.txt', 'r')
+f = open('day03.txt', 'r')
 doc = f.readlines()
 for i in range(len(doc)):
     doc[i] = doc[i].strip()
