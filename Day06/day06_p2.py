@@ -5,8 +5,8 @@ for i in range(len(lines)):
     lines[i] = lines[i].strip()
 
 # getting times and distances
-time = int(lines[0].split(':')[1].replace(' ',''))
-distance = int(lines[1].split(':')[1].replace(' ',''))
+time = int(lines[0].split(':')[1].replace(' ', ''))
+distance = int(lines[1].split(':')[1].replace(' ', ''))
 
 # starting from zero
 # stop when we reach the first time that satisfies the condition

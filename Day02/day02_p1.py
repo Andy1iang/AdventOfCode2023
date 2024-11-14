@@ -2,8 +2,8 @@ FILE_NAME = 'day02.txt'
 
 lines = open(FILE_NAME).readlines()
 
-# limit on what 
-limits = {'red':12, 'green':13, 'blue':14}
+# limit on what
+limits = {'red': 12, 'green': 13, 'blue': 14}
 
 total = 0
 
@@ -17,7 +17,7 @@ for line in lines:
     # going through each pull from each line
     add = True
     for pull in marbles.split(';'):
-        pull = pull.strip() # cleaning whitespace
+        pull = pull.strip()  # cleaning whitespace
 
         # going through each color in each pull
         for color in pull.split(','):

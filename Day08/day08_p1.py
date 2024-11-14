@@ -19,7 +19,7 @@ end = 'ZZZ'
 # traverse while we are not at ZZZ node
 while curr != end:
     # if the direction is left, go to the left node, else go to the right node
-    if directions[total%len(directions)] == 'L':
+    if directions[total % len(directions)] == 'L':
         curr = nodes[curr][0]
     else:
         curr = nodes[curr][1]
@@ -27,4 +27,3 @@ while curr != end:
     total += 1
 
 print(total)
-    

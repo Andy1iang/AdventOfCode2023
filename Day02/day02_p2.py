@@ -17,7 +17,7 @@ for line in lines:
             color = color.strip()
             count, colorName = color.split(' ')
             # update the minimum number of marbles we need (highest we see)
-            minMarbles[colorName] = max(minMarbles[colorName],int(count))
+            minMarbles[colorName] = max(minMarbles[colorName], int(count))
 
     # getting product of the minimum marbles of each color
     total += minMarbles['red'] * minMarbles['green'] * minMarbles['blue']

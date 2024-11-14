@@ -26,7 +26,7 @@ for line in lines:
     # add every other number at the start
     # subtract every other number after that
     for i in range(len(nums)):
-        if i%2 == 0:
+        if i % 2 == 0:
             total += nums[i][0]
         else:
             total -= nums[i][0]

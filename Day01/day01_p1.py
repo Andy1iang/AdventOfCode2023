@@ -13,7 +13,7 @@ for line in lines:
         if line[i].isnumeric():
             temp += line[i]
             break
-    
+
     # looking from the back
     for i in range(len(line)-1, -1, -1):
         if line[i].isnumeric():

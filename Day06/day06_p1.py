@@ -5,10 +5,10 @@ for i in range(len(lines)):
     lines[i] = lines[i].strip()
 
 # getting times and distances
-times = list(map(int,lines[0].split(':')[1].strip().split()))
-distances = list(map(int,lines[1].split(':')[1].strip().split()))
+times = list(map(int, lines[0].split(':')[1].strip().split()))
+distances = list(map(int, lines[1].split(':')[1].strip().split()))
 
-total = 1 # result variable
+total = 1  # result variable
 
 # starting from zero
 # stop when we reach the first time that satisfies the condition
@@ -28,7 +28,7 @@ for i in range(0, len(times)):
     # goto next iteration if we don't satisfy the condition
     else:
         continue
-    
+
     # getting the amount of ways we satisfy the condition
     # and multiplying it to the total
     total *= (time - t - t + 1)

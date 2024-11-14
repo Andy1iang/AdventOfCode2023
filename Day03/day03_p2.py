@@ -6,6 +6,8 @@ for i in range(len(lines)):
 
 # returns the integer value of a number
 # given the index of one of the digits
+
+
 def getNum(i, j):
     # looks left
     t = j
@@ -13,7 +15,7 @@ def getNum(i, j):
     while t-1 >= 0 and lines[i][t-1].isnumeric():
         num = lines[i][t-1] + num
         t -= 1
-    
+
     # looks right
     while j+1 < len(lines[i]) and lines[i][j+1].isnumeric():
         num = num + lines[i][j+1]

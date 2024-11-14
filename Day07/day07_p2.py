@@ -5,12 +5,14 @@ for i in range(len(lines)):
     lines[i] = lines[i].strip()
 
 # same concept as part 1, but different way to find rank of cards
+
+
 class Card:
 
     # Jack is now the lowest individual value
     # Jack can be used as any card to boost rank
-    cardValues = {'A': 14, 'K': 13, 'Q': 12, 'J': -1, 'T': 10
-                  , '9': 9, "8": 8, "7": 7, "6": 6, "5": 5, "4": 4, "3": 3, "2": 2}
+    cardValues = {'A': 14, 'K': 13, 'Q': 12, 'J': -1, 'T': 10,
+                  '9': 9, "8": 8, "7": 7, "6": 6, "5": 5, "4": 4, "3": 3, "2": 2}
 
     def __init__(self, card, bid):
         self.card = card
@@ -31,7 +33,7 @@ class Card:
         jokerCount = self.card.count('J')
         if jokerCount == 4 or jokerCount == 5:
             return 7
-        
+
         # remove Jacks from card and count number of each card
         tempCard = self.card.replace('J', '')
         cardCounts = {}
@@ -64,7 +66,7 @@ class Card:
                 return 2
         else:
             return 1
-        
+
     def __lt__(self, other):
         if self.rank == other.rank:
             for i in range(5):
@@ -73,7 +75,7 @@ class Card:
             return False
         else:
             return self.rank < other.rank
-        
+
 
 cards = []
 for line in lines:

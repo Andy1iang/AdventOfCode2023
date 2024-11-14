@@ -1,11 +1,11 @@
 FILE_NAME = 'day03.txt'
 
 lines = open(FILE_NAME).readlines()
-for i in range(len(lines)): 
-    lines[i] = lines[i].strip() # removes the newline characters
+for i in range(len(lines)):
+    lines[i] = lines[i].strip()  # removes the newline characters
 
-number = '' # stores the current number we're looking at
-added = False # if we should add the number
+number = ''  # stores the current number we're looking at
+added = False  # if we should add the number
 total = 0
 
 # looping through each line
