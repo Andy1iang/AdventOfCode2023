@@ -6,6 +6,9 @@ lines = open(FILE_NAME).readlines()
 for i in range(len(lines)):
     grid.append(list(lines[i].strip()))
 
+# same approach as part 1, except we find the area instead of perimeter
+
+
 directions = {'J': {'E': (-1, 0, 'N'), 'S': (0, -1, 'W')}, 'F': {'W': (1, 0, 'S'), 'N': (0, 1, 'E')}, '7': {'E': (1, 0, 'S'), 'N': (0, -1, 'W')},
               'L': {'W': (-1, 0, 'N'), 'S': (0, 1, 'E')}, '|': {'N': (-1, 0, 'N'), 'S': (1, 0, 'S')}, '-': {'E': (0, 1, 'E'), 'W': (0, -1, 'W')}}
 
@@ -20,11 +23,10 @@ visited = set()
 visited.add((start[0], start[1]))
 curr = start
 
-startSymbol = set(['-','|','F','J','7','L'])
-# F 7 or L J should count has two (also if just one of them)
-# F J or L 7 should count as one
+startSymbol = set(['-', '|', 'F', 'J', '7', 'L'])
 
 # getting starting direction
+# getting the starting symbol (which symbol the S should be)
 direction = ''
 if grid[start[0] - 1][start[1]] in 'F7|':
     direction = 'N'
@@ -43,19 +45,21 @@ if grid[start[0]][start[1] + 1] in 'J7-':
     curr = [start[0], start[1] + 1]
     startSymbol = startSymbol.difference(set(['J', '7', '|']))
 
+# only element left in the set
 startSymbol = list(startSymbol)[0]
-print(startSymbol)
 
-# finding the length of the path
-pathLen = 1
-
+# going through the loop and marking which spots we've visited
 while grid[curr[0]][curr[1]] != 'S':
-    pathLen += 1
     visited.add((curr[0], curr[1]))
     x, y, direction = directions[grid[curr[0]][curr[1]]][direction]
     curr = [curr[0] + x, curr[1] + y]
 
+# changing the start symbol to the correct symbol
 grid[start[0]][start[1]] = startSymbol
+
+# counting the number of borders to the left of a given point
+# if the border is L---J or 7---F, we count it as 1 border
+# Ray Casting Theorem (If a ray crosses an odd number of borders, it's inside the polygon)
 
 
 def countCrossing(i, j):

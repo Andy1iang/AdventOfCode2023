@@ -6,6 +6,7 @@ lines = open(FILE_NAME).readlines()
 for i in range(len(lines)):
     grid.append(list(lines[i].strip()))
 
+# offsets based on each direction and which way it's going
 directions = {'J': {'E': (-1, 0, 'N'), 'S': (0, -1, 'W')}, 'F': {'W': (1, 0, 'S'), 'N': (0, 1, 'E')}, '7': {'E': (1, 0, 'S'), 'N': (0, -1, 'W')},
               'L': {'W': (-1, 0, 'N'), 'S': (0, 1, 'E')}, '|': {'N': (-1, 0, 'N'), 'S': (1, 0, 'S')}, '-': {'E': (0, 1, 'E'), 'W': (0, -1, 'W')}}
 
@@ -16,6 +17,7 @@ for i in range(len(grid)):
         if grid[i][j] == 'S':
             start = [i, j]
 
+# starting position
 curr = start
 
 # getting starting direction
@@ -35,11 +37,10 @@ elif grid[start[0]][start[1] + 1] in 'J7-':
 
 # finding the length of the path
 pathLen = 1
-
 while grid[curr[0]][curr[1]] != 'S':
     pathLen += 1
     x, y, direction = directions[grid[curr[0]][curr[1]]][direction]
     curr = [curr[0] + x, curr[1] + y]
 
-
+# we will reach the middle and half path length
 print(pathLen//2)
